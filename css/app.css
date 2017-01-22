@@ -1,0 +1,92 @@
+@font-face {
+  font-family: "texgyreadventor-regular";
+  src: url("../fonts/texgyreadventor-regular-webfont.ttf");
+}
+
+html, body {
+  font-family: "texgyreadventor-regular";
+  height: 100%;
+  background: #f4f4f4;
+  -moz-user-select: none;                                                       
+  -webkit-user-select: none;                                                    
+  -ms-user-select: none;                                                        
+  user-select: none;                                                            
+}
+
+h1, h4, p {
+  color: #727272;
+}
+
+img {
+  margin-top: 20px;
+}
+
+.btn.active {
+  background-color: #f0941d !important;
+}
+
+.btn {
+  border-radius: 0;
+  margin: 5px;
+  width: 100%;
+}
+
+.programs li {
+  clear: both;
+  height: 115px;
+  padding-top: 15px;
+}
+
+.program-listing {
+  width: 300px;
+  margin: 10px;
+  display: inline-block;
+/*  background: #565656;*/
+}
+
+.carousel-caption {
+  position: relative;
+  left: auto;
+  right: auto;
+}
+
+.carousel-caption-big {
+  margin-top: 465px;
+  margin-bottom: 466px;
+}
+
+.carousel-control {
+  position: fixed;
+  z-index: 999;
+}
+
+.floated {
+  margin: 50px;
+}
+.centered {
+  left: auto;
+  right: auto;
+}
+.unit {
+  display:inline-block;
+  border:5px solid gray;
+  border-radius: 5px;
+  width: 400px;
+  padding: 10px;
+  background: white;
+}
+.logic {
+  background: #e9fce9;
+}
+.state {
+  background: #ebf6f9;
+}
+.sequence {
+  background: #ffe6e9;
+}
+.field {
+  border: 2px solid black;
+  border-radius: 10px;
+  background: white;
+}
+

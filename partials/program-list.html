@@ -1,0 +1,75 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-10">
+    </div>
+    <div class="col-md-1">
+      <button type="button" class="btn btn-default" ng-click="launchIntoFullscreen()">
+        <span class="glyphicon glyphicon-resize-full"></span>
+      </button>
+    </div>
+    <div class="col-md-1">
+      <button type="button" class="btn btn-default" ng-click="exitFullscreen()">
+        <span class="glyphicon glyphicon-resize-small"></span>
+      </button>
+    </div>
+  </div>
+  <div class="row">
+
+    <div class="col-md-2">
+      <h4>Szukaj:</h4> <input ng-model="query.$">
+      <h4>Sortuj:</h4>
+      <select ng-model="orderProp">
+        <option value="name">Alfabetycznie</option>
+        <option value="id">Najnowsze</option>
+      </select>
+
+      <!--h4>Kategorie:</h4-->
+      <!--input ng-model="query.tags"></input>
+      <br></br-->
+
+      <!--div class="btn-group">
+        <label class="btn btn-primary" ng-model="query.tags"
+          uib-btn-radio="''">wszystkie<span class="badge">{{programs.length}}</span>
+        </label>
+        <label ng-repeat="avalible_tag in avalible_tags"
+          class="btn btn-default" ng-model="$parent.query.tags"
+          uib-btn-radio="avalible_tag">{{avalible_tag}}
+        </label>
+      </div-->
+
+      <!--h4>Checkbox</h4>
+      <pre>Model: {{checkModel}}</pre>
+      <pre>Results: {{checkResults}}</pre>
+      <h4>Szukaj:</h4> <input ng-model="checkResults"-->
+
+      <!--h4>Kategorie</h4>
+      <div class="btn-group">
+        <label class="btn btn-default" ng-model="checkModel.simple" uib-btn-checkbox>proste</label>
+        <label class="btn btn-default" ng-model="checkModel.complex" uib-btn-checkbox>złożone</label>
+      </div-->
+      <h4>Typy</h4>
+      <div class="btn-group">
+        <label class="btn btn-default" ng-model="checkModel.alarm" uib-btn-checkbox>alarm</label>
+        <label class="btn btn-default" ng-model="checkModel.oswietlenie" uib-btn-checkbox>oswietlenie</label>
+        <label class="btn btn-default" ng-model="checkModel.ogrzewanie" uib-btn-checkbox>ogrzewanie</label>
+        <label class="btn btn-default" ng-model="checkModel.rolety" uib-btn-checkbox>rolety</label>
+        <label class="btn btn-default" ng-model="checkModel.ogrod" uib-btn-checkbox>ogrod</label>
+        <label class="btn btn-default" ng-model="checkModel.rtv" uib-btn-checkbox>rtv</label>
+        <label class="btn btn-default" ng-model="checkModel.inne" uib-btn-checkbox>inne</label>
+      </div>
+
+    </div>
+
+    <div class="col-md-10">
+      <ul class="programs">
+        <li ng-repeat="program in programs | filter:query | filter:checkResults[0] | orderBy:orderProp"
+          class="thumbnail program-listing">
+          <a href="#/programs/{{program.id+program.name}}">{{program.name}}</a>
+          <div>{{program.spec}}</div>
+          <div>kategorie: {{program.tags}}</div>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</div>

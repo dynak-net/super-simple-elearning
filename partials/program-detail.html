@@ -1,0 +1,47 @@
+<uib-carousel interval="myInterval" no-wrap="noWrapSlides">
+  <uib-slide>
+    <div class="carousel-caption">
+      <h1>Program #{{programId}}: {{program.name}}</h1>
+      <h4>{{program.description}}</h4>
+      <h4>Aby zrealizować ten program musisz wprowadzić następującą ilość funkcji automatyki: {{program.automation.length}}</h4>
+    </div>
+    <div ng-repeat="block in program.automation" class="floated unit {{block.type}}">
+      <h2>{{block.type}} #{{$index+1}}: {{block.name}}</h2>
+      <input type="checkbox" ng-model="checked"> elementy:</input>
+      <hr></hr>
+      <ul ng-if="checked" class="program-listing">
+        <li ng-repeat="screen in block.screens">
+          <div class="field">
+            <h5>{{screen.text}}</h5>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="carousel-caption">
+      <h1>Podgląd programu</h1>
+    </div>
+  </uib-slide>
+  <uib-slide ng-repeat="block in program.automation" active="slide.active">
+    <div class="centered unit {{block.type}}">
+      <h2>{{block.type}} #{{$index+1}}: {{block.name}}</h2>
+      <input type="checkbox" ng-model="checked"> elementy:</input>
+      <hr></hr>
+      <ul ng-if="checked" class="program-listing">
+        <li ng-repeat="screen in block.screens">
+          <div class="field">
+            <h5>{{screen.text}}</h5>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div ng-repeat="screen in block.screens">
+      <img ng-src="programs/{{programId}}/{{block.name}}/{{screen.img}}">
+      <div class="carousel-caption">
+        <h4>Zrzut ekranu {{$index+1}}</h4>
+        <h1>{{screen.text}}</h1>
+        <p>{{screen.detail}}</p>
+      </div>
+    </div>
+    <h4>Blok {{$index+1}}</h4>
+  </uib-slide>
+</uib-carousel>
